@@ -60,8 +60,8 @@ const LEGAL_AGE = 18; // don't change this
 /*==========The first function==========*/
 function getLegalAgePeople(arr, ageParamName) {
     // WRITE CODE HERE
-    let legalAgePeople = arr.filter(function(people) {
-        return people.age >= LEGAL_AGE
+    let legalAgePeople = arr.filter(function(arr) {
+        return arr.age >= LEGAL_AGE
     })
 
     return legalAgePeople
@@ -82,8 +82,8 @@ console.log(legalAgePeopleArray)
 /*==========The second function==========*/
 function getPeopleWhoHaveMoneyForAlcohol(arr) {
     // WRITE CODE HERE
-    let peopleWhoHaveMoneyForAlcohol = arr.filter(function(people) {
-        return people.moneyAmount >= people.desiredAlcoholAmount * alcoholPriceForOneItem[people.desiredAlcoholName]
+    let peopleWhoHaveMoneyForAlcohol = arr.filter(function(arr) {
+        return arr.moneyAmount >= arr.desiredAlcoholAmount * alcoholPriceForOneItem[arr.desiredAlcoholName]
     })
 
     return peopleWhoHaveMoneyForAlcohol
@@ -106,15 +106,15 @@ console.log(peopleWhoHaveMoneyForAlcoholArray)
 /*==========The third function==========*/
 function buyAlcohol(arr) {
     // WRITE CODE HERE
-    let executedPurchase = arr.map(function(people) {
+    let executedPurchase = arr.map(function(arr) {
         let bottles = ''
-        if (people.desiredAlcoholAmount > 1) {
+        if (arr.desiredAlcoholAmount > 1) {
             bottles = ' bottles'
-        } else if (people.desiredAlcoholAmount = 1) {
+        } else if (arr.desiredAlcoholAmount = 1) {
             bottles = ' bottle'
         }
 
-        return people.name + " bought " + people.desiredAlcoholAmount + bottles + ' of ' + people.desiredAlcoholName + ' for ' + alcoholPriceForOneItem[people.desiredAlcoholName] * people.desiredAlcoholAmount + ' rubles';
+        return arr.name + " bought " + arr.desiredAlcoholAmount + bottles + ' of ' + arr.desiredAlcoholName + ' for ' + alcoholPriceForOneItem[arr.desiredAlcoholName] * arr.desiredAlcoholAmount + ' rubles';
     })
 
     return executedPurchase
